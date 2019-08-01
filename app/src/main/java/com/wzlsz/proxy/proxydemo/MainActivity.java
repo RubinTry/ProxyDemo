@@ -2,6 +2,7 @@ package com.wzlsz.proxy.proxydemo;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import com.wzlsz.proxy.proxydemo.common.bean.TestModel;
@@ -25,6 +26,13 @@ public class MainActivity extends FragmentActivity implements ICallback {
         
         //寻找一家房地产公司并且委托他们购房任务
         httpProcessor = new HttpProcessor(this , this);
+        btnRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //房产公司派人找房
+                httpProcessor.request();
+            }
+        });
     }
 
     /**
